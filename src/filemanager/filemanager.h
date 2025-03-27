@@ -15,6 +15,6 @@ public:
     FileManager(string initialPath);
 
     void listCurrentDirectory();
-    bool listCurrentDirectory();
+    void createDirectory(string newDirectory);
 };
 #endif

@@ -6,6 +6,7 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/assert.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -78,6 +79,7 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
   /usr/include/c++/13/clocale \
@@ -564,6 +566,10 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 
 /usr/include/pthread.h:
 
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/linux/errno.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/c++/13/bits/refwrap.h:
@@ -608,17 +614,13 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 
 /usr/include/asm-generic/errno-base.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/c++/13/bits/char_traits.h:
+/usr/include/c++/13/limits:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/c++/13/bits/basic_ios.h:
 
 /usr/include/c++/13/bits/shared_ptr_base.h:
-
-/usr/include/c++/13/bits/codecvt.h:
 
 /usr/include/c++/13/ios:
 
@@ -662,6 +664,16 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 
 /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.cpp:
 
+/usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/assert.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.h:
+
 /usr/include/c++/13/bits/predefined_ops.h:
 
 /usr/include/c++/13/iosfwd:
@@ -674,11 +686,15 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 
 /usr/include/c++/13/bits/basic_string.tcc:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
 
-/usr/include/x86_64-linux-gnu/bits/endian.h:
+/usr/include/libintl.h:
 
-/home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.h:
+/usr/include/c++/13/bits/basic_string.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/c++/13/bits/char_traits.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
 
@@ -697,6 +713,16 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 /usr/include/c++/13/bits/fs_ops.h:
 
 /usr/include/c++/13/bits/chrono.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/c++/13/bits/fs_path.h:
+
+/usr/include/c++/13/bits/charconv.h:
+
+/usr/include/c++/13/cstdio:
+
+/usr/include/c++/13/bits/stl_pair.h:
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
@@ -724,25 +750,13 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 
 /usr/include/c++/13/bits/fs_fwd.h:
 
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/usr/include/c++/13/bits/shared_ptr.h:
-
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/c++/13/bits/exception_ptr.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/include/c++/13/bits/charconv.h:
-
-/usr/include/c++/13/cstdio:
-
-/usr/include/c++/13/bits/stl_pair.h:
-
-/usr/include/c++/13/bits/fs_path.h:
-
-/usr/include/c++/13/limits:
+/usr/include/c++/13/bits/shared_ptr.h:
 
 /usr/include/c++/13/ratio:
 
@@ -789,6 +803,8 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/bits/utility.h:
+
+/usr/include/c++/13/cassert:
 
 /usr/include/c++/13/cstdlib:
 
@@ -876,16 +892,6 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 
 /usr/include/c++/13/typeinfo:
 
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/c++/13/bits/basic_string.h:
-
-/usr/include/libintl.h:
-
 /usr/include/c++/13/bits/streambuf.tcc:
 
 /usr/include/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
-/usr/include/linux/errno.h:

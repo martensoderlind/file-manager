@@ -1,6 +1,7 @@
 #include "filemanager.h"
 #include <string>
 #include <iostream>
+#include <cassert>
 using namespace std;
 
 FileManager::FileManager() {};
@@ -46,7 +47,7 @@ void FileManager::listCurrentDirectory()
             // cout << fileSize << endl;
             if (std::filesystem::is_regular_file(entry.status()))
             {
-                std::cout << setw(5) << std::filesystem::file_size(entry.path()) << " B" << endl;
+                std::cout << setw(5) << filesystem::file_size(entry.path()) << " B" << endl;
             }
             else
             {
@@ -56,6 +57,24 @@ void FileManager::listCurrentDirectory()
         catch (const std::exception &e)
         {
             std::cerr << e.what() << '\n';
+        }
+    }
+};
+void FileManager::createDirectory(string newDirectory)
+{
+    if (filesystem::exists(newDirectory))
+    {
+        cout << "Directory already exist." << endl;
+    }
+    else
+    {
+        if (filesystem::create_directory(newDirectory))
+        {
+            cout << "Directory: " << newDirectory << " created successfully!" << endl;
+        }
+        else
+        {
+            cout << "failed to create directory." << endl;
         }
     }
 };
