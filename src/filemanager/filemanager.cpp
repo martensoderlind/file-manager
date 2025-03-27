@@ -28,7 +28,6 @@ void FileManager::listCurrentDirectory()
         try
         {
             string fileType;
-            // string fileSize;
             if (filesystem::is_directory(entry.status()))
             {
                 fileType = "directory";
@@ -36,29 +35,26 @@ void FileManager::listCurrentDirectory()
             if (filesystem::is_regular_file(entry.status()))
             {
                 fileType = "file";
-                // fileSize = filesystem::file_size(entry.path());
             }
             else
             {
                 fileType = "other";
-                // fileSize = "-";
             }
 
             cout << left << setw(40) << entry.path().filename().string()
                  << setw(15) << fileType;
-            // cout << fileSize << endl;
-            if (std::filesystem::is_regular_file(entry.status()))
+            if (filesystem::is_regular_file(entry.status()))
             {
-                std::cout << setw(5) << filesystem::file_size(entry.path()) << " B" << endl;
+                cout << setw(5) << filesystem::file_size(entry.path()) << " B" << endl;
             }
             else
             {
-                std::cout << "-" << endl;
+                cout << "-" << endl;
             }
         }
         catch (const std::exception &e)
         {
-            std::cerr << e.what() << '\n';
+            cerr << e.what() << '\n';
         }
     }
 };
@@ -98,9 +94,9 @@ void FileManager::createFile(string newFile)
             file.close();
             cout << "file created." << endl;
         }
-        catch (const std::exception &e)
+        catch (const exception &e)
         {
-            std::cerr << "Error while creating file: " << e.what() << '\n';
+            cerr << "Error while creating file: " << e.what() << '\n';
         }
     }
 };
