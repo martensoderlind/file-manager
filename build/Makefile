@@ -129,6 +129,30 @@ file_manager/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_manager.dir/build.make CMakeFiles/file_manager.dir/build
 .PHONY : file_manager/fast
 
+src/filemanager/filemanager.o: src/filemanager/filemanager.cpp.o
+.PHONY : src/filemanager/filemanager.o
+
+# target to build an object file
+src/filemanager/filemanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_manager.dir/build.make CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o
+.PHONY : src/filemanager/filemanager.cpp.o
+
+src/filemanager/filemanager.i: src/filemanager/filemanager.cpp.i
+.PHONY : src/filemanager/filemanager.i
+
+# target to preprocess a source file
+src/filemanager/filemanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_manager.dir/build.make CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.i
+.PHONY : src/filemanager/filemanager.cpp.i
+
+src/filemanager/filemanager.s: src/filemanager/filemanager.cpp.s
+.PHONY : src/filemanager/filemanager.s
+
+# target to generate assembly for a file
+src/filemanager/filemanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_manager.dir/build.make CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.s
+.PHONY : src/filemanager/filemanager.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... file_manager"
+	@echo "... src/filemanager/filemanager.o"
+	@echo "... src/filemanager/filemanager.i"
+	@echo "... src/filemanager/filemanager.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
