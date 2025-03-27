@@ -12,7 +12,7 @@ private:
 public:
     // Konstruktorer
     FileManager();
-    FileManager(string &initialPath);
+    FileManager(string initialPath);
 
     bool listCurrentDirectory();
 };
