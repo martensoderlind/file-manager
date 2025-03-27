@@ -10,7 +10,7 @@ int main()
     FileManager fileManager(path);
 
     // string newDirectory = "../testDirectory";
-    string newFile = "../test.txt";
+    string newFile = "../test.cpp";
     // fileManager.createDirectory(newDirectory);
     fileManager.createFile(newFile);
     fileManager.listCurrentDirectory();

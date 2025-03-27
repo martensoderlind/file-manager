@@ -31,6 +31,7 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/c++/13/bits/fs_fwd.h \
   /usr/include/c++/13/bits/fs_ops.h \
   /usr/include/c++/13/bits/fs_path.h \
+  /usr/include/c++/13/bits/fstream.tcc \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hash_bytes.h \
@@ -102,6 +103,7 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/filesystem \
+  /usr/include/c++/13/fstream \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
@@ -203,8 +205,10 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
@@ -254,6 +258,7 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
   /usr/include/c++/13/bits/fs_fwd.h \
   /usr/include/c++/13/bits/fs_ops.h \
   /usr/include/c++/13/bits/fs_path.h \
+  /usr/include/c++/13/bits/fstream.tcc \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hash_bytes.h \
@@ -324,6 +329,7 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/filesystem \
+  /usr/include/c++/13/fstream \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
@@ -425,8 +431,10 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
   /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
@@ -467,6 +475,10 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
 
@@ -570,9 +582,13 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 
 /usr/include/linux/errno.h:
 
+/usr/include/features.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/c++/13/bits/refwrap.h:
+
+/usr/include/c++/13/bits/fstream.tcc:
 
 /usr/include/c++/13/debug/debug.h:
 
@@ -614,6 +630,10 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 
 /usr/include/asm-generic/errno-base.h:
 
+/usr/include/features-time64.h:
+
+/usr/include/c++/13/string_view:
+
 /usr/include/c++/13/limits:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
@@ -649,14 +669,6 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 /usr/include/c++/13/bits/exception_defines.h:
 
 /usr/include/c++/13/bits/locale_facets.h:
-
-/usr/include/c++/13/bits/locale_facets.tcc:
-
-/usr/include/c++/13/bits/requires_hosted.h:
-
-/usr/include/c++/13/bits/string_view.tcc:
-
-/usr/include/features.h:
 
 /usr/include/c++/13/backward/binders.h:
 
@@ -718,6 +730,8 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 
 /usr/include/c++/13/bits/fs_path.h:
 
+/usr/include/c++/13/fstream:
+
 /usr/include/c++/13/bits/charconv.h:
 
 /usr/include/c++/13/cstdio:
@@ -753,6 +767,12 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/c++/13/bits/exception_ptr.h:
+
+/usr/include/c++/13/bits/locale_facets.tcc:
+
+/usr/include/c++/13/bits/requires_hosted.h:
+
+/usr/include/c++/13/bits/string_view.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
@@ -869,10 +889,6 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
 /usr/include/c++/13/iomanip:
 
 /usr/include/c++/13/istream:
-
-/usr/include/c++/13/string_view:
-
-/usr/include/features-time64.h:
 
 /usr/include/c++/13/bits/streambuf_iterator.h:
 

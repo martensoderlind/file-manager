@@ -82,18 +82,25 @@ void FileManager::createDirectory(string newDirectory)
 };
 void FileManager::createFile(string newFile)
 {
-    try
+    if (filesystem::exists(newFile))
     {
-        ofstream file(newFile);
-        if (!file)
-        {
-            cerr << "Could not create file." << endl;
-        }
-        file.close();
-        cout << "file created." << endl;
+        cout << "A file with that name already exist." << endl;
     }
-    catch (const std::exception &e)
+    else
     {
-        std::cerr << "Error while creating file: " << e.what() << '\n';
+        try
+        {
+            ofstream file(newFile);
+            if (!file)
+            {
+                cerr << "Could not create file." << endl;
+            }
+            file.close();
+            cout << "file created." << endl;
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << "Error while creating file: " << e.what() << '\n';
+        }
     }
 };
