@@ -1,9 +1,11 @@
 #include <iostream>
+#include "filemanager.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "file manager" << endl;
+    FileManager fileManager;
+    fileManager.listCurrentDirectory();
     return 0;
 }

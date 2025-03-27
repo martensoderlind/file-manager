@@ -13,5 +13,7 @@ public:
     // Konstruktorer
     FileManager();
     FileManager(string &initialPath);
+
+    bool listCurrentDirectory();
 };
 #endif
