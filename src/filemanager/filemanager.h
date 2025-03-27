@@ -2,6 +2,7 @@
 #define FILE_MANAGER_H
 
 #include <filesystem>
+#include <fstream>
 #include <string>
 using namespace std;
 class FileManager
@@ -16,5 +17,6 @@ public:
 
     void listCurrentDirectory();
     void createDirectory(string newDirectory);
+    void createFile(string newFile);
 };
 #endif

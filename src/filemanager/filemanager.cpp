@@ -2,6 +2,8 @@
 #include <string>
 #include <iostream>
 #include <cassert>
+#include <filesystem>
+#include <fstream>
 using namespace std;
 
 FileManager::FileManager() {};
@@ -76,5 +78,22 @@ void FileManager::createDirectory(string newDirectory)
         {
             cout << "failed to create directory." << endl;
         }
+    }
+};
+void FileManager::createFile(string newFile)
+{
+    try
+    {
+        ofstream file(newFile);
+        if (!file)
+        {
+            cerr << "Could not create file." << endl;
+        }
+        file.close();
+        cout << "file created." << endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error while creating file: " << e.what() << '\n';
     }
 };
