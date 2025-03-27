@@ -60,13 +60,13 @@ void FileManager::listCurrentDirectory()
 };
 void FileManager::createDirectory(string newDirectory)
 {
-    if (filesystem::exists(newDirectory))
+    if (filesystem::exists(currentDirectory + "/" + newDirectory))
     {
         cout << "Directory already exist." << endl;
     }
     else
     {
-        if (filesystem::create_directory(newDirectory))
+        if (filesystem::create_directory(currentDirectory + "/" + newDirectory))
         {
             cout << "Directory: " << newDirectory << " created successfully!" << endl;
         }
@@ -78,7 +78,7 @@ void FileManager::createDirectory(string newDirectory)
 };
 void FileManager::createFile(string newFile)
 {
-    if (filesystem::exists(newFile))
+    if (filesystem::exists(currentDirectory + "/" + newFile))
     {
         cout << "A file with that name already exist." << endl;
     }
@@ -86,7 +86,7 @@ void FileManager::createFile(string newFile)
     {
         try
         {
-            ofstream file(newFile);
+            ofstream file(currentDirectory + "/" + newFile);
             if (!file)
             {
                 cerr << "Could not create file." << endl;
@@ -99,4 +99,38 @@ void FileManager::createFile(string newFile)
             cerr << "Error while creating file: " << e.what() << '\n';
         }
     }
+};
+bool FileManager::removeFile(string fileToRemove)
+{
+    if (!filesystem::exists(currentDirectory + "/" + fileToRemove))
+    {
+        cout << "No file with that name exist." << endl;
+        return false;
+    }
+    if (!filesystem::is_regular_file(currentDirectory + "/" + fileToRemove))
+    {
+
+        cout << "No file with that name exist." << endl;
+        return false;
+    }
+    try
+    {
+        uintmax_t removed = filesystem::remove(currentDirectory + "/" + fileToRemove);
+        if (removed > 0)
+        {
+            cout << "File removed successfully." << endl;
+            return true;
+        }
+        else
+        {
+            cout << "Could not removed file." << endl;
+            return false;
+        }
+    }
+    catch (const exception &e)
+    {
+        cerr << "Error while deleting file: " << e.what() << '\n';
+        return false;
+    }
+    return true;
 };
