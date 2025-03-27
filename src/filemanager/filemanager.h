@@ -14,6 +14,7 @@ public:
     FileManager();
     FileManager(string initialPath);
 
+    void listCurrentDirectory();
     bool listCurrentDirectory();
 };
 #endif

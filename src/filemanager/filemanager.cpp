@@ -6,7 +6,7 @@ using namespace std;
 FileManager::FileManager() {};
 FileManager::FileManager(string initialPath) : currentDirectory(initialPath) {};
 
-bool FileManager::listCurrentDirectory()
+void FileManager::listCurrentDirectory()
 {
     if (currentDirectory.empty())
     {
@@ -58,5 +58,4 @@ bool FileManager::listCurrentDirectory()
             std::cerr << e.what() << '\n';
         }
     }
-    return 0;
 };
