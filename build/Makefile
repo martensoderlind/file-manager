@@ -177,6 +177,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_manager.dir/build.make CMakeFiles/file_manager.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/menu/menu.o: src/menu/menu.cpp.o
+.PHONY : src/menu/menu.o
+
+# target to build an object file
+src/menu/menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_manager.dir/build.make CMakeFiles/file_manager.dir/src/menu/menu.cpp.o
+.PHONY : src/menu/menu.cpp.o
+
+src/menu/menu.i: src/menu/menu.cpp.i
+.PHONY : src/menu/menu.i
+
+# target to preprocess a source file
+src/menu/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_manager.dir/build.make CMakeFiles/file_manager.dir/src/menu/menu.cpp.i
+.PHONY : src/menu/menu.cpp.i
+
+src/menu/menu.s: src/menu/menu.cpp.s
+.PHONY : src/menu/menu.s
+
+# target to generate assembly for a file
+src/menu/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_manager.dir/build.make CMakeFiles/file_manager.dir/src/menu/menu.cpp.s
+.PHONY : src/menu/menu.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +216,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/menu/menu.o"
+	@echo "... src/menu/menu.i"
+	@echo "... src/menu/menu.s"
 .PHONY : help
 
 

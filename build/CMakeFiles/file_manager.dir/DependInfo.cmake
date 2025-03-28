@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.cpp" "CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o" "gcc" "CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o.d"
   "/home/marten/Documents/Programmering/file-manager/src/main.cpp" "CMakeFiles/file_manager.dir/src/main.cpp.o" "gcc" "CMakeFiles/file_manager.dir/src/main.cpp.o.d"
+  "/home/marten/Documents/Programmering/file-manager/src/menu/menu.cpp" "CMakeFiles/file_manager.dir/src/menu/menu.cpp.o" "gcc" "CMakeFiles/file_manager.dir/src/menu/menu.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

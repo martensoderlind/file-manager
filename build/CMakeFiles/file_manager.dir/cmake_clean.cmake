@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o.d"
   "CMakeFiles/file_manager.dir/src/main.cpp.o"
   "CMakeFiles/file_manager.dir/src/main.cpp.o.d"
+  "CMakeFiles/file_manager.dir/src/menu/menu.cpp.o"
+  "CMakeFiles/file_manager.dir/src/menu/menu.cpp.o.d"
   "file_manager"
   "file_manager.pdb"
 )

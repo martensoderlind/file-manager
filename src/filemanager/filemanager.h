@@ -8,11 +8,9 @@ using namespace std;
 class FileManager
 {
 private:
-    // filesystem::path currentDirectory;
     string currentDirectory;
 
 public:
-    // Konstruktorer
     FileManager();
     FileManager(string initialPath);
 
