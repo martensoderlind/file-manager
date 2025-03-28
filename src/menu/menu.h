@@ -13,6 +13,7 @@ private:
 public:
     Menu() : menuState(MAIN) {};
     int mainMenu();
+    int displayMenu(const std::vector<DirectoryEntry> &entries);
     int renderMenu();
     void stateChange(int option);
 };

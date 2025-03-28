@@ -4,6 +4,8 @@
 #include <filesystem>
 #include <fstream>
 #include <string>
+#include <vector>
+#include "types.h"
 using namespace std;
 class FileManager
 {
@@ -14,7 +16,7 @@ public:
     FileManager();
     FileManager(string initialPath);
 
-    void listCurrentDirectory();
+    vector<DirectoryEntry> filesInCurrentDirectory();
     void createDirectory(string newDirectory);
     void createFile(string newFile);
     bool removeFile(string fileToRemove);

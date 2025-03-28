@@ -3,10 +3,10 @@
 
 CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.cpp \
   /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.h \
+  /home/marten/Documents/Programmering/file-manager/src/types.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
-  /usr/include/assert.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -66,12 +66,15 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
   /usr/include/c++/13/bits/stl_function.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_uninitialized.h \
+  /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
@@ -80,7 +83,7 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
-  /usr/include/c++/13/cassert \
+  /usr/include/c++/13/bits/vector.tcc \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
   /usr/include/c++/13/clocale \
@@ -125,6 +128,7 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/vector \
   /usr/include/ctype.h \
   /usr/include/curses.h \
   /usr/include/endian.h \
@@ -823,19 +827,15 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /usr/include/pthread.h:
 
-/usr/include/ncurses_dll.h:
-
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/linux/errno.h:
 
 /usr/include/features.h:
 
-/home/marten/Documents/Programmering/file-manager/src/types.h:
+/usr/include/ctype.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/include/c++/13/bits/refwrap.h:
+/usr/include/c++/13/vector:
 
 /usr/include/c++/13/bits/fstream.tcc:
 
@@ -857,19 +857,13 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /usr/include/c++/13/bits/locale_classes.tcc:
 
-/usr/include/c++/13/bits/allocator.h:
-
 /usr/include/c++/13/bits/fs_dir.h:
 
 /usr/include/c++/13/sstream:
 
 /usr/include/c++/13/bits/quoted_string.h:
 
-/usr/include/ctype.h:
-
 /usr/include/c++/13/bits/ostream.tcc:
-
-/usr/include/c++/13/locale:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
 
@@ -887,13 +881,17 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /usr/include/c++/13/bits/functional_hash.h:
 
-/usr/include/c++/13/limits:
-
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/c++/13/bits/basic_ios.h:
 
 /usr/include/c++/13/bits/shared_ptr_base.h:
+
+/usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/ncurses_dll.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/c++/13/ios:
 
@@ -917,6 +915,14 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /usr/include/c++/13/ext/aligned_buffer.h:
 
+/usr/include/c++/13/limits:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/c++/13/bits/refwrap.h:
+
+/home/marten/Documents/Programmering/file-manager/src/types.h:
+
 /usr/include/c++/13/bits/localefwd.h:
 
 /usr/include/c++/13/bits/exception_defines.h:
@@ -929,16 +935,6 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.cpp:
 
-/usr/include/c++/13/bits/codecvt.h:
-
-/usr/include/assert.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.h:
-
 /usr/include/c++/13/bits/predefined_ops.h:
 
 /usr/include/c++/13/iosfwd:
@@ -950,6 +946,12 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 /usr/include/c++/13/bit:
 
 /usr/include/c++/13/bits/basic_string.tcc:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
@@ -981,11 +983,11 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/c++/13/bits/fs_path.h:
-
 /usr/include/c++/13/fstream:
 
 /usr/include/c++/13/bits/charconv.h:
+
+/usr/include/c++/13/bits/fs_path.h:
 
 /usr/include/c++/13/cstdio:
 
@@ -1039,6 +1041,10 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /usr/include/c++/13/bits/stl_algobase.h:
 
+/usr/include/c++/13/bits/allocator.h:
+
+/usr/include/c++/13/bits/stl_bvector.h:
+
 /usr/include/c++/13/bits/stl_construct.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h:
@@ -1056,6 +1062,14 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/13/locale:
+
+/usr/include/c++/13/bits/stl_uninitialized.h:
+
+/usr/include/endian.h:
+
+/usr/include/c++/13/bits/streambuf.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
@@ -1077,7 +1091,7 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /usr/include/c++/13/bits/utility.h:
 
-/usr/include/c++/13/cassert:
+/usr/include/c++/13/bits/vector.tcc:
 
 /usr/include/c++/13/cstdlib:
 
@@ -1089,9 +1103,9 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /usr/include/c++/13/cerrno:
 
-/usr/include/c++/13/bits/allocated_ptr.h:
-
 /usr/include/curses.h:
+
+/usr/include/c++/13/bits/allocated_ptr.h:
 
 /usr/include/c++/13/clocale:
 
@@ -1158,7 +1172,3 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 /usr/include/c++/13/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/13/typeinfo:
-
-/usr/include/c++/13/bits/streambuf.tcc:
-
-/usr/include/endian.h:

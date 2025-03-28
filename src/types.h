@@ -10,5 +10,11 @@ enum MenuState
     REMOVE,
     EXIT
 };
+struct DirectoryEntry
+{
+    std::string name;
+    std::string type;
+    std::size_t size;
+};
 
 #endif

@@ -2,6 +2,7 @@
 #include <ncurses.h>
 #include "menu.h"
 #include <ncurses.h>
+#include "types.h"
 
 void Menu::stateChange(int option)
 {
@@ -66,9 +67,72 @@ int Menu::mainMenu()
     }
     return -1;
 }
+int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
+{
+    int choice = 0;
+    int key;
+    bool run = true;
+
+    // Combine menu options with file/directory entries
+    std::vector<std::string> options;
+    options.push_back(".. (Parent Directory)");
+
+    // Add directory and file entries to the menu
+    for (const auto &entry : entries)
+    {
+        std::string entryDisplay = entry.name + " (" + entry.type + ")";
+        options.push_back(entryDisplay);
+    }
+
+    // Add additional menu options
+    options.push_back("Create file");
+    options.push_back("Create directory");
+    options.push_back("Delete File");
+    options.push_back("Exit");
+
+    int num_options = options.size();
+
+    while (run)
+    {
+        clear(); // Clear the screen before redrawing
+
+        mvprintw(1, 2, "=====FILE MANAGER=====");
+
+        // Draw menu options
+        for (int i = 0; i < num_options; i++)
+        {
+            if (i == choice)
+            {
+                attron(A_REVERSE);
+            }
+            mvprintw(i + 2, 2, "%s", options[i].c_str());
+            attroff(A_REVERSE);
+        }
+
+        refresh();
+
+        // Handle key input
+        key = getch();
+        switch (key)
+        {
+        case KEY_UP:
+            choice = (choice - 1 + num_options) % num_options;
+            break;
+        case KEY_DOWN:
+            choice = (choice + 1) % num_options;
+            break;
+        case '\n':
+            run = false;
+            return choice;
+        }
+    }
+
+    return -1;
+}
 int Menu::renderMenu()
 {
     int option;
+    vector<DirectoryEntry> files;
     switch (menuState)
     {
     case MAIN:
@@ -78,7 +142,8 @@ int Menu::renderMenu()
         return 0;
         break;
     case DISPLAY:
-        fileManager.listCurrentDirectory();
+        files = fileManager.filesInCurrentDirectory();
+        displayMenu(files);
         return 0;
         break;
     case ADD_FILE:
