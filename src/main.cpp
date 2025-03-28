@@ -24,6 +24,6 @@ int main()
             run = false;
         }
     }
-
+    endwin();
     return 0;
 }

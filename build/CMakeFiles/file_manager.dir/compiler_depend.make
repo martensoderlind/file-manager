@@ -126,6 +126,7 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
   /usr/include/ctype.h \
+  /usr/include/curses.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
   /usr/include/features-time64.h \
@@ -133,6 +134,7 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/libintl.h \
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
+  /usr/include/ncurses_dll.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -140,6 +142,7 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Docu
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
   /usr/include/time.h \
+  /usr/include/unctrl.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
@@ -692,10 +695,6 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 
-/usr/include/unctrl.h:
-
-/usr/include/ncurses_dll.h:
-
 /home/marten/Documents/Programmering/file-manager/src/menu/menu.h:
 
 /home/marten/Documents/Programmering/file-manager/src/main.cpp:
@@ -808,6 +807,8 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
+/usr/include/unctrl.h:
+
 /usr/include/stdlib.h:
 
 /usr/include/stdio.h:
@@ -821,6 +822,8 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 /usr/include/sched.h:
 
 /usr/include/pthread.h:
+
+/usr/include/ncurses_dll.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
@@ -879,6 +882,10 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 /usr/include/features-time64.h:
 
 /usr/include/c++/13/string_view:
+
+/usr/include/errno.h:
+
+/usr/include/c++/13/bits/functional_hash.h:
 
 /usr/include/c++/13/limits:
 
@@ -1082,9 +1089,9 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 
 /usr/include/c++/13/cerrno:
 
-/usr/include/curses.h:
-
 /usr/include/c++/13/bits/allocated_ptr.h:
+
+/usr/include/curses.h:
 
 /usr/include/c++/13/clocale:
 
@@ -1101,10 +1108,6 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programm
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
 
 /usr/include/c++/13/tuple:
-
-/usr/include/c++/13/bits/functional_hash.h:
-
-/usr/include/errno.h:
 
 /usr/include/c++/13/cctype:
 

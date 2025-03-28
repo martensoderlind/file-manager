@@ -73,11 +73,12 @@ int Menu::renderMenu()
     {
     case MAIN:
         option = mainMenu();
-        clear();
+        // clear();
         stateChange(option);
         return 0;
         break;
     case DISPLAY:
+        fileManager.listCurrentDirectory();
         return 0;
         break;
     case ADD_FILE:

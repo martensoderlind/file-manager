@@ -180,4 +180,5 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/iostream \
- /usr/include/c++/13/cassert /usr/include/assert.h
+ /usr/include/c++/13/cassert /usr/include/assert.h /usr/include/curses.h \
+ /usr/include/ncurses_dll.h /usr/include/unctrl.h /usr/include/curses.h
