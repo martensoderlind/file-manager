@@ -129,6 +129,7 @@ bool FileManager::removeFile(const string &fileToRemove)
     }
     return true;
 };
+
 void FileManager::updateDirectory()
 {
     size_t lastSlashPos = currentDirectory.find_last_of('/');
