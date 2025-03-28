@@ -53,7 +53,7 @@ vector<DirectoryEntry> FileManager::filesInCurrentDirectory()
 
     return entries;
 }
-void FileManager::createDirectory(const string &newDirectory)
+void FileManager::createDirectory(const string &newDirectory, const int &row)
 {
     if (filesystem::exists(currentDirectory + "/" + newDirectory))
     {
@@ -71,11 +71,11 @@ void FileManager::createDirectory(const string &newDirectory)
         }
     }
 };
-void FileManager::createFile(const string &newFile)
+void FileManager::createFile(const string &newFile, const int &row)
 {
     if (filesystem::exists(currentDirectory + "/" + newFile))
     {
-        cout << "A file with that name already exist." << endl;
+        mvprintw(row, 2, "A file with that name already exist.");
     }
     else
     {
@@ -87,7 +87,7 @@ void FileManager::createFile(const string &newFile)
                 cerr << "Could not create file." << endl;
             }
             file.close();
-            cout << "file created." << endl;
+            mvprintw(row, 2, "File created.");
         }
         catch (const exception &e)
         {

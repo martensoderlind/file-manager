@@ -17,8 +17,8 @@ public:
     FileManager(string initialPath);
 
     vector<DirectoryEntry> filesInCurrentDirectory();
-    void createDirectory(const string &newDirectory);
-    void createFile(const string &newFile);
+    void createDirectory(const string &newDirectory, const int &row);
+    void createFile(const string &newFile, const int &row);
     bool removeFile(const string &fileToRemove);
     void updateDirectory();
     void appendDirectory(const string &directory);

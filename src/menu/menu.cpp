@@ -77,11 +77,15 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
     vector<string> type;
     vector<size_t> size;
 
-    options.push_back("Exit");
+    options.push_back("[Exit]");
     type.push_back("action");
     size.push_back(0);
 
-    options.push_back(".. (Parent Directory)");
+    options.push_back("[Options]");
+    type.push_back("action");
+    size.push_back(0);
+
+    options.push_back("[..Parent Directory]");
     type.push_back("directory");
     size.push_back(0);
 
@@ -147,10 +151,82 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
 
     return -1;
 }
+int Menu::fileMenu(const int &row)
+{
+    int choice = 0;
+    int key;
+    bool run = true;
+    const char *options[] = {"Add file", "Add directory", "Delete file", "Exit"};
+    int num_options = sizeof(options) / sizeof(options[0]);
+
+    while (run)
+    {
+        for (int i = 0; i < num_options; i++)
+        {
+            if (i == choice)
+            {
+                attron(A_REVERSE);
+            }
+            mvprintw(i + row + 8, 2, "%s", options[i]);
+            attroff(A_REVERSE);
+        }
+        mvprintw(row + 7, 1, "-----------------------------------------------------------");
+        refresh();
+        key = getch();
+
+        switch (key)
+        {
+        case KEY_UP:
+            choice = (choice - 1 + num_options) % num_options;
+            break;
+        case KEY_DOWN:
+            choice = (choice + 1) % num_options;
+            break;
+        case '\n':
+            run = false;
+            endwin();
+            return choice;
+        }
+    }
+    return -1;
+}
+void Menu::handelFileMenu(const int &option, const int &row)
+{
+    echo();
+
+    char input[10] = {0};
+    switch (option)
+    {
+    case 0:
+
+        mvprintw(row + 1, 2, "Name of file: ");
+        refresh();
+        getnstr(input, sizeof(input) - 1);
+        fileManager.createFile(input, row + 2);
+        break;
+    case 1:
+        mvprintw(row + 1, 2, "Name of directory: ");
+        refresh();
+        getnstr(input, sizeof(input) - 1);
+
+        fileManager.createDirectory(input, row + 2);
+        break;
+    case 2:
+        mvprintw(row + 1, 2, "Name of file: ");
+        refresh();
+        getnstr(input, sizeof(input) - 1);
+        break;
+
+    default:
+        break;
+    }
+    noecho();
+}
 int Menu::renderMenu()
 {
     int option;
     int displayOption;
+    int fileOption;
     vector<DirectoryEntry> files;
     switch (menuState)
     {
@@ -169,13 +245,18 @@ int Menu::renderMenu()
         }
         else if (displayOption == 1)
         {
+            fileOption = fileMenu(files.size());
+            handelFileMenu(fileOption, files.size() + 12);
+        }
+        else if (displayOption == 2)
+        {
             fileManager.updateDirectory();
         }
         else
         {
-            if (files[displayOption - 2].type == "directory")
+            if (files[displayOption - 3].type == "directory")
             {
-                fileManager.appendDirectory(files[displayOption - 2].name);
+                fileManager.appendDirectory(files[displayOption - 3].name);
             }
         }
         return 0;
