@@ -156,8 +156,13 @@ int Menu::fileMenu(const int &row)
     int choice = 0;
     int key;
     bool run = true;
-    const char *options[] = {"Add file", "Add directory", "Delete file", "Exit"};
-    int num_options = sizeof(options) / sizeof(options[0]);
+    vector<string> options = {"Add file", "Add directory", "Delete file", "Copy", "Exit"};
+    bool pasteEmpty = fileManager.CopyFromEmpty();
+    if (!pasteEmpty)
+    {
+        options.insert(options.end() - 1, "Paste");
+    }
+    int num_options = options.size();
 
     while (run)
     {
@@ -167,10 +172,10 @@ int Menu::fileMenu(const int &row)
             {
                 attron(A_REVERSE);
             }
-            mvprintw(i + row + 8, 2, "%s", options[i]);
+            mvprintw(i + row + 8, 2, "%s", options[i].c_str());
             attroff(A_REVERSE);
         }
-        mvprintw(row + 7, 1, "-----------------------------------------------------------");
+        mvprintw(row + 8, 1, "-----------------------------------------------------------");
         refresh();
         key = getch();
 
@@ -215,6 +220,22 @@ void Menu::handelFileMenu(const int &option, const int &row)
         refresh();
         getnstr(input, sizeof(input) - 1);
         fileManager.removeFile(input);
+        break;
+    case 3:
+        mvprintw(row + 1, 2, "Name of file: ");
+        refresh();
+        getnstr(input, sizeof(input) - 1);
+        fileManager.setCopyFrom(input);
+        break;
+    case 4:
+        if (!fileManager.CopyFromEmpty())
+        {
+            mvprintw(row + 2, 2, "Name the new file: ");
+            refresh();
+            getnstr(input, sizeof(input) - 1);
+            fileManager.setCopyTo(input);
+            fileManager.copy();
+        }
         break;
     default:
         break;

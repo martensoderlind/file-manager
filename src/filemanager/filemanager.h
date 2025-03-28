@@ -11,6 +11,8 @@ class FileManager
 {
 private:
     string currentDirectory;
+    string copyFrom;
+    string copyTo;
 
 public:
     FileManager();
@@ -23,5 +25,9 @@ public:
     void updateDirectory();
     void appendDirectory(const string &directory);
     string directory();
+    void setCopyFrom(const string &file);
+    bool CopyFromEmpty();
+    void setCopyTo(const string &file);
+    void copy();
 };
 #endif

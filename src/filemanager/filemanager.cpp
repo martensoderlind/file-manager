@@ -183,3 +183,21 @@ string FileManager::directory()
 {
     return currentDirectory;
 }
+void FileManager::setCopyTo(const string &file)
+{
+    copyTo = currentDirectory + "/" + file;
+}
+void FileManager::setCopyFrom(const string &file)
+{
+    copyFrom = currentDirectory + "/" + file;
+}
+void FileManager::copy()
+{
+    filesystem::copy(copyFrom, copyTo);
+    copyFrom = "";
+    copyTo = "";
+}
+bool FileManager::CopyFromEmpty()
+{
+    return copyFrom.empty();
+};
