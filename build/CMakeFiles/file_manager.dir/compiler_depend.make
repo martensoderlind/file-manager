@@ -354,6 +354,7 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
   /usr/include/ctype.h \
+  /usr/include/curses.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
   /usr/include/features-time64.h \
@@ -361,6 +362,7 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
   /usr/include/libintl.h \
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
+  /usr/include/ncurses_dll.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -368,6 +370,7 @@ CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
   /usr/include/time.h \
+  /usr/include/unctrl.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \

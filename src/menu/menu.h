@@ -13,7 +13,8 @@ private:
 public:
     Menu() : menuState(MAIN) {};
     int mainMenu();
-    void renderMenu();
+    int renderMenu();
+    void stateChange(int option);
 };
 
 #endif

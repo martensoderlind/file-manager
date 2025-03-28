@@ -15,9 +15,14 @@ int main()
     keypad(stdscr, TRUE);
     bool run = true;
     Menu menu;
+    int renderMenu = 0;
     while (run)
     {
-        menu.renderMenu();
+        renderMenu = menu.renderMenu();
+        if (renderMenu == 1)
+        {
+            run = false;
+        }
     }
 
     return 0;
