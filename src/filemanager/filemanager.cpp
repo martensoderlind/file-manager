@@ -129,3 +129,17 @@ bool FileManager::removeFile(string fileToRemove)
     }
     return true;
 };
+void FileManager::updateDirectory()
+{
+    size_t lastSlashPos = currentDirectory.find_last_of('/');
+
+    if (lastSlashPos != string::npos)
+    {
+        currentDirectory = currentDirectory.substr(0, lastSlashPos);
+    }
+}
+
+string FileManager::directory()
+{
+    return currentDirectory;
+}

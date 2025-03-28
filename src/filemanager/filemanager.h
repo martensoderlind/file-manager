@@ -20,5 +20,7 @@ public:
     void createDirectory(string newDirectory);
     void createFile(string newFile);
     bool removeFile(string fileToRemove);
+    void updateDirectory();
+    string directory();
 };
 #endif

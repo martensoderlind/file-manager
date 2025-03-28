@@ -72,6 +72,7 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
     int choice = 0;
     int key;
     bool run = true;
+    string currentDirectory = fileManager.directory();
     vector<string> options;
     vector<string> type;
     vector<size_t> size;
@@ -97,10 +98,11 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
     {
         clear();
         mvprintw(1, 2, "=====FILE MANAGER=====");
-        mvprintw(2, 2, "Name");
-        mvprintw(2, 40, "Type");
-        mvprintw(2, 55, "Size");
-        mvprintw(3, 1, "-----------------------------------------------------------");
+        mvprintw(2, 2, "%s", currentDirectory.c_str());
+        mvprintw(3, 2, "Name");
+        mvprintw(3, 40, "Type");
+        mvprintw(3, 55, "Size");
+        mvprintw(4, 1, "-----------------------------------------------------------");
 
         for (int i = 0; i < num_options; i++)
         {
@@ -109,17 +111,16 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
                 attron(A_REVERSE);
             }
 
-            // Only print size for regular files
             if (type[i] == "file")
             {
-                mvprintw(i + 4, 2, "%s", options[i].c_str());
-                mvprintw(i + 4, 40, "%s", type[i].c_str());
-                mvprintw(i + 4, 55, "%zu", size[i]);
+                mvprintw(i + 5, 2, "%s", options[i].c_str());
+                mvprintw(i + 5, 40, "%s", type[i].c_str());
+                mvprintw(i + 5, 55, "%zu", size[i]);
             }
             else
             {
-                mvprintw(i + 4, 2, "%s", options[i].c_str());
-                mvprintw(i + 4, 40, "%s", type[i].c_str());
+                mvprintw(i + 5, 2, "%s", options[i].c_str());
+                mvprintw(i + 5, 40, "%s", type[i].c_str());
             }
 
             attroff(A_REVERSE);
@@ -147,6 +148,7 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
 int Menu::renderMenu()
 {
     int option;
+    int displayOption;
     vector<DirectoryEntry> files;
     switch (menuState)
     {
@@ -158,7 +160,11 @@ int Menu::renderMenu()
         break;
     case DISPLAY:
         files = fileManager.filesInCurrentDirectory();
-        displayMenu(files);
+        displayOption = displayMenu(files);
+        if (displayOption == 0)
+        {
+            fileManager.updateDirectory();
+        }
         return 0;
         break;
     case ADD_FILE:
