@@ -72,28 +72,35 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
     int choice = 0;
     int key;
     bool run = true;
+    vector<string> options;
+    vector<string> type;
+    vector<size_t> size;
 
-    std::vector<std::string> options;
     options.push_back(".. (Parent Directory)");
+    type.push_back("directory");
+    size.push_back(0);
 
     for (const auto &entry : entries)
     {
-        std::string entryDisplay = entry.name + " (" + entry.type + ")";
-        options.push_back(entryDisplay);
+        options.push_back(entry.name);
+        type.push_back(entry.type);
+        size.push_back(entry.size);
     }
 
-    options.push_back("Create file");
-    options.push_back("Create directory");
-    options.push_back("Delete File");
     options.push_back("Exit");
+    type.push_back("action");
+    size.push_back(0);
 
     int num_options = options.size();
 
     while (run)
     {
         clear();
-
         mvprintw(1, 2, "=====FILE MANAGER=====");
+        mvprintw(2, 2, "Name");
+        mvprintw(2, 40, "Type");
+        mvprintw(2, 55, "Size");
+        mvprintw(3, 1, "-----------------------------------------------------------");
 
         for (int i = 0; i < num_options; i++)
         {
@@ -101,7 +108,20 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
             {
                 attron(A_REVERSE);
             }
-            mvprintw(i + 2, 2, "%s", options[i].c_str());
+
+            // Only print size for regular files
+            if (type[i] == "file")
+            {
+                mvprintw(i + 4, 2, "%s", options[i].c_str());
+                mvprintw(i + 4, 40, "%s", type[i].c_str());
+                mvprintw(i + 4, 55, "%zu", size[i]);
+            }
+            else
+            {
+                mvprintw(i + 4, 2, "%s", options[i].c_str());
+                mvprintw(i + 4, 40, "%s", type[i].c_str());
+            }
+
             attroff(A_REVERSE);
         }
 

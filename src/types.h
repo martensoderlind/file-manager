@@ -1,6 +1,8 @@
 #ifndef TYPES_H
 #define TYPES_H
 
+using namespace std;
+
 enum MenuState
 {
     MAIN,
@@ -12,9 +14,9 @@ enum MenuState
 };
 struct DirectoryEntry
 {
-    std::string name;
-    std::string type;
-    std::size_t size;
+    string name;
+    string type;
+    size_t size;
 };
 
 #endif
