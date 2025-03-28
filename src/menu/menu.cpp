@@ -73,18 +73,15 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
     int key;
     bool run = true;
 
-    // Combine menu options with file/directory entries
     std::vector<std::string> options;
     options.push_back(".. (Parent Directory)");
 
-    // Add directory and file entries to the menu
     for (const auto &entry : entries)
     {
         std::string entryDisplay = entry.name + " (" + entry.type + ")";
         options.push_back(entryDisplay);
     }
 
-    // Add additional menu options
     options.push_back("Create file");
     options.push_back("Create directory");
     options.push_back("Delete File");
@@ -94,11 +91,10 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
 
     while (run)
     {
-        clear(); // Clear the screen before redrawing
+        clear();
 
         mvprintw(1, 2, "=====FILE MANAGER=====");
 
-        // Draw menu options
         for (int i = 0; i < num_options; i++)
         {
             if (i == choice)
@@ -111,7 +107,6 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
 
         refresh();
 
-        // Handle key input
         key = getch();
         switch (key)
         {
