@@ -88,6 +88,7 @@ void FileManager::createFile(const string &newFile, const int &row)
             }
             file.close();
             mvprintw(row, 2, "File created.");
+            cout << "file created." << endl;
         }
         catch (const exception &e)
         {
@@ -102,30 +103,49 @@ bool FileManager::removeFile(const string &fileToRemove)
         cout << "No file with that name exist." << endl;
         return false;
     }
-    if (!filesystem::is_regular_file(currentDirectory + "/" + fileToRemove))
+    if (filesystem::is_regular_file(currentDirectory + "/" + fileToRemove))
     {
-
-        cout << "No file with that name exist." << endl;
-        return false;
-    }
-    try
-    {
-        uintmax_t removed = filesystem::remove(currentDirectory + "/" + fileToRemove);
-        if (removed > 0)
+        try
         {
-            cout << "File removed successfully." << endl;
-            return true;
+            uintmax_t removed = filesystem::remove(currentDirectory + "/" + fileToRemove);
+            if (removed > 0)
+            {
+                cout << "File removed successfully." << endl;
+                return true;
+            }
+            else
+            {
+                cout << "Could not removed file." << endl;
+                return false;
+            }
         }
-        else
+        catch (const exception &e)
         {
-            cout << "Could not removed file." << endl;
+            cerr << "Error while deleting file: " << e.what() << '\n';
             return false;
         }
     }
-    catch (const exception &e)
+    else if (filesystem::is_directory(currentDirectory + "/" + fileToRemove))
     {
-        cerr << "Error while deleting file: " << e.what() << '\n';
-        return false;
+        try
+        {
+            uintmax_t removed = filesystem::remove_all(currentDirectory + "/" + fileToRemove);
+            if (removed > 0)
+            {
+                cout << "File removed successfully." << endl;
+                return true;
+            }
+            else
+            {
+                cout << "Could not removed file." << endl;
+                return false;
+            }
+        }
+        catch (const exception &e)
+        {
+            cerr << "Error while deleting file: " << e.what() << '\n';
+            return false;
+        }
     }
     return true;
 };

@@ -198,7 +198,6 @@ void Menu::handelFileMenu(const int &option, const int &row)
     switch (option)
     {
     case 0:
-
         mvprintw(row + 1, 2, "Name of file: ");
         refresh();
         getnstr(input, sizeof(input) - 1);
@@ -215,8 +214,8 @@ void Menu::handelFileMenu(const int &option, const int &row)
         mvprintw(row + 1, 2, "Name of file: ");
         refresh();
         getnstr(input, sizeof(input) - 1);
+        fileManager.removeFile(input);
         break;
-
     default:
         break;
     }
