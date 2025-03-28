@@ -14,7 +14,7 @@ FileManager::FileManager(string initialPath) : currentDirectory(initialPath) {};
 
 vector<DirectoryEntry> FileManager::filesInCurrentDirectory()
 {
-    std::vector<DirectoryEntry> entries;
+    vector<DirectoryEntry> entries;
 
     if (currentDirectory.empty())
     {
@@ -138,7 +138,26 @@ void FileManager::updateDirectory()
         currentDirectory = currentDirectory.substr(0, lastSlashPos);
     }
 }
+void FileManager::appendDirectory(const std::string &directory)
+{
+    if (directory.empty())
+    {
+        return;
+    }
 
+    std::string cleanDirectory = directory;
+    if (cleanDirectory.front() == '/')
+    {
+        cleanDirectory.erase(0, 1);
+    }
+
+    if (!currentDirectory.empty() && currentDirectory.back() != '/')
+    {
+        currentDirectory += "/";
+    }
+
+    currentDirectory += cleanDirectory;
+}
 string FileManager::directory()
 {
     return currentDirectory;

@@ -21,6 +21,7 @@ public:
     void createFile(string newFile);
     bool removeFile(string fileToRemove);
     void updateDirectory();
+    void appendDirectory(const string &directory);
     string directory();
 };
 #endif

@@ -4,7 +4,7 @@
 #include <ncurses.h>
 #include "types.h"
 
-void Menu::stateChange(int option)
+void Menu::stateChange(const int &option)
 {
     switch (option)
     {
@@ -77,6 +77,10 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
     vector<string> type;
     vector<size_t> size;
 
+    options.push_back("Exit");
+    type.push_back("action");
+    size.push_back(0);
+
     options.push_back(".. (Parent Directory)");
     type.push_back("directory");
     size.push_back(0);
@@ -88,11 +92,9 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
         size.push_back(entry.size);
     }
 
-    options.push_back("Exit");
-    type.push_back("action");
-    size.push_back(0);
-
     int num_options = options.size();
+    int num_type = type.size();
+    int num_size = size.size();
 
     while (run)
     {
@@ -154,7 +156,6 @@ int Menu::renderMenu()
     {
     case MAIN:
         option = mainMenu();
-        // clear();
         stateChange(option);
         return 0;
         break;
@@ -163,7 +164,19 @@ int Menu::renderMenu()
         displayOption = displayMenu(files);
         if (displayOption == 0)
         {
+            clear();
+            menuState = MAIN;
+        }
+        else if (displayOption == 1)
+        {
             fileManager.updateDirectory();
+        }
+        else
+        {
+            if (files[displayOption - 2].type == "directory")
+            {
+                fileManager.appendDirectory(files[displayOption - 2].name);
+            }
         }
         return 0;
         break;
