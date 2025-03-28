@@ -53,7 +53,7 @@ vector<DirectoryEntry> FileManager::filesInCurrentDirectory()
 
     return entries;
 }
-void FileManager::createDirectory(string newDirectory)
+void FileManager::createDirectory(const string &newDirectory)
 {
     if (filesystem::exists(currentDirectory + "/" + newDirectory))
     {
@@ -71,7 +71,7 @@ void FileManager::createDirectory(string newDirectory)
         }
     }
 };
-void FileManager::createFile(string newFile)
+void FileManager::createFile(const string &newFile)
 {
     if (filesystem::exists(currentDirectory + "/" + newFile))
     {
@@ -95,7 +95,7 @@ void FileManager::createFile(string newFile)
         }
     }
 };
-bool FileManager::removeFile(string fileToRemove)
+bool FileManager::removeFile(const string &fileToRemove)
 {
     if (!filesystem::exists(currentDirectory + "/" + fileToRemove))
     {
