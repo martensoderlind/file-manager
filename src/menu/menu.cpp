@@ -155,7 +155,7 @@ int Menu::fileMenu(const int &row)
 string Menu::fileNameInput(const int row, const string message)
 {
     char input[10] = {0};
-    mvprintw(row + 1, 2, "%s", message.c_str());
+    mvprintw(row + 4, 2, "%s", message.c_str());
     refresh();
     getnstr(input, sizeof(input) - 1);
     return input;
@@ -185,7 +185,7 @@ void Menu::handelFileMenu(const int &option, const int &row)
     case 4:
         if (!fileManager.CopyFromEmpty())
         {
-            fileNameInput(row + 1, "Name the new file: ");
+            input = fileNameInput(row + 1, "Name the new file: ");
             fileManager.setCopyTo(input);
             fileManager.copy();
         }
@@ -197,44 +197,29 @@ void Menu::handelFileMenu(const int &option, const int &row)
 }
 int Menu::renderMenu()
 {
-    int option;
-    int displayOption;
     int fileOption;
-    vector<DirectoryEntry> files;
-    switch (menuState)
-    {
-    case DISPLAY:
-        files = fileManager.filesInCurrentDirectory();
-        displayOption = displayMenu(files);
+    vector<DirectoryEntry> files = fileManager.filesInCurrentDirectory();
+    int displayOption = displayMenu(files);
 
-        if (displayOption == 0)
-        {
-            clear();
-            menuState = EXIT;
-        }
-        else if (displayOption == 1)
-        {
-            fileOption = fileMenu(files.size());
-            handelFileMenu(fileOption, files.size() + 12);
-        }
-        else if (displayOption == 2)
-        {
-            fileManager.updateDirectory();
-        }
-        else
-        {
-            if (files[displayOption - 3].type == "directory")
-            {
-                fileManager.appendDirectory(files[displayOption - 3].name);
-            }
-        }
-        return 0;
-        break;
-    case EXIT:
+    switch (displayOption)
+    {
+    case 0:
+        clear();
         return 1;
+        break;
+    case 1:
+        fileOption = fileMenu(files.size());
+        handelFileMenu(fileOption, files.size() + 12);
+        break;
+    case 2:
+        fileManager.updateDirectory();
         break;
     default:
-        return 1;
+        if (files[displayOption - 3].type == "directory")
+        {
+            fileManager.appendDirectory(files[displayOption - 3].name);
+        }
         break;
     }
+    return 0;
 }
