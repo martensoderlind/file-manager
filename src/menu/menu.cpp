@@ -178,7 +178,7 @@ void Menu::handelFileMenu(const int &option, const int &row)
         break;
     case 2:
         input = fileNameInput(row, "Name of the file: ");
-        fileManager.removeFile(input, row + 2);
+        fileManager.removeItem(input, row + 2);
         break;
     case 3:
         input = fileNameInput(row, "Name of the file: ");

@@ -86,7 +86,7 @@ void FileManager::createFile(const string &newFile, const int &row)
             ofstream file(currentDirectory + "/" + newFile);
             if (!file)
             {
-                statusMessage(row, "Could not find file.", 2000);
+                statusMessage(row, "Could not create file.", 2000);
             }
             file.close();
             statusMessage(row, "File created", 1500);
@@ -100,7 +100,7 @@ void FileManager::createFile(const string &newFile, const int &row)
     clrtoeol();
     refresh();
 };
-bool FileManager::removeFile(const string &fileToRemove, const int &row)
+bool FileManager::removeItem(const string &fileToRemove, const int &row)
 {
     if (fileToRemove.empty())
     {
