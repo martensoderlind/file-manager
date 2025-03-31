@@ -175,14 +175,14 @@ void FileManager::updateDirectory()
         currentDirectory = currentDirectory.substr(0, lastSlashPos);
     }
 }
-void FileManager::appendDirectory(const std::string &directory)
+void FileManager::appendDirectory(const string &directory)
 {
     if (directory.empty())
     {
         return;
     }
 
-    std::string cleanDirectory = directory;
+    string cleanDirectory = directory;
     if (cleanDirectory.front() == '/')
     {
         cleanDirectory.erase(0, 1);
