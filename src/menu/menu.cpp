@@ -4,31 +4,6 @@
 #include <ncurses.h>
 #include "types.h"
 
-void Menu::stateChange(const int &option)
-{
-    switch (option)
-    {
-    case 0:
-        menuState = DISPLAY;
-        break;
-    case 1:
-        menuState = ADD_FILE;
-        break;
-    case 2:
-        menuState = ADD_DIR;
-        break;
-    case 3:
-        menuState = REMOVE;
-        break;
-    case 4:
-        menuState = EXIT;
-        break;
-
-    default:
-        break;
-    }
-}
-
 int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
 {
     int choice = 0;
@@ -107,6 +82,7 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
             break;
         case '\n':
             run = false;
+            endwin();
             return choice;
         }
     }

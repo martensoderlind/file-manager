@@ -12,11 +12,9 @@ private:
 
 public:
     Menu() : menuState(DISPLAY) {};
-    int mainMenu();
     int displayMenu(const std::vector<DirectoryEntry> &entries);
     int fileMenu(const int &row);
     int renderMenu();
-    void stateChange(const int &option);
     void handelFileMenu(const int &option, const int &row);
 };
 
