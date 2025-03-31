@@ -52,6 +52,7 @@ vector<DirectoryEntry> FileManager::filesInCurrentDirectory()
 
     return entries;
 }
+
 void FileManager::createDirectory(const string &newDirectory, const int &row)
 {
     if (filesystem::exists(currentDirectory + "/" + newDirectory))
@@ -100,70 +101,70 @@ void FileManager::createFile(const string &newFile, const int &row)
     clrtoeol();
     refresh();
 };
-bool FileManager::removeItem(const string &fileToRemove, const int &row)
+
+void FileManager::removeFile(const int &row, const string &fileToRemove)
+{
+    try
+    {
+        uintmax_t removed = filesystem::remove(currentDirectory + "/" + fileToRemove);
+        if (removed > 0)
+        {
+            statusMessage(row, "File removed successfully.", 1500);
+        }
+        else
+        {
+            statusMessage(row, "Could not remove file.", 2000);
+        }
+    }
+    catch (const exception &e)
+    {
+        mvprintw(row, 2, "Error while deleting file: %s", e.what());
+        refresh();
+        napms(2000);
+    }
+}
+void FileManager::removeDirectory(const int &row, const string &fileToRemove)
+{
+    try
+    {
+        uintmax_t removed = filesystem::remove_all(currentDirectory + "/" + fileToRemove);
+        if (removed > 0)
+        {
+            statusMessage(row, "Directory removed successfully.", 2000);
+        }
+        else
+        {
+            statusMessage(row, "Could not remove directory.", 2000);
+        }
+    }
+    catch (const exception &e)
+    {
+        mvprintw(row, 2, "Error while deleting directory: %s", e.what());
+        refresh();
+        napms(2000);
+    }
+}
+void FileManager::removeItem(const string &fileToRemove, const int &row)
 {
     if (fileToRemove.empty())
     {
         statusMessage(row, "Please enter the name of the file/directory that you want to remove.", 3000);
-        return false;
     }
-    if (!filesystem::exists(currentDirectory + "/" + fileToRemove))
+    else if (!filesystem::exists(currentDirectory + "/" + fileToRemove))
     {
         statusMessage(row, "No file with that name exist.", 2000);
-        return false;
     }
-    if (filesystem::is_regular_file(currentDirectory + "/" + fileToRemove))
+    else if (filesystem::is_regular_file(currentDirectory + "/" + fileToRemove))
     {
-        try
-        {
-            uintmax_t removed = filesystem::remove(currentDirectory + "/" + fileToRemove);
-            if (removed > 0)
-            {
-                statusMessage(row, "File removed successfully.", 1500);
-                return true;
-            }
-            else
-            {
-                statusMessage(row, "Could not remove file.", 2000);
-                return false;
-            }
-        }
-        catch (const exception &e)
-        {
-            mvprintw(row, 2, "Error while deleting file: %s", e.what());
-            refresh();
-            napms(2000);
-            return false;
-        }
+        removeFile(row, fileToRemove);
     }
     else if (filesystem::is_directory(currentDirectory + "/" + fileToRemove))
     {
-        try
-        {
-            uintmax_t removed = filesystem::remove_all(currentDirectory + "/" + fileToRemove);
-            if (removed > 0)
-            {
-                statusMessage(row, "Directory removed successfully.", 2000);
-                return true;
-            }
-            else
-            {
-                statusMessage(row, "Could not remove directory.", 2000);
-                return false;
-            }
-        }
-        catch (const exception &e)
-        {
-            mvprintw(row, 2, "Error while deleting directory: %s", e.what());
-            refresh();
-            napms(2000);
-            return false;
-        }
+        removeDirectory(row, fileToRemove);
     }
     move(row, 0);
     clrtoeol();
     refresh();
-    return true;
 };
 
 void FileManager::updateDirectory()

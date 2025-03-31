@@ -22,7 +22,9 @@ public:
     void statusMessage(const int row, const string message, const int delay);
     void createDirectory(const string &newDirectory, const int &row);
     void createFile(const string &newFile, const int &row);
-    bool removeItem(const string &fileToRemove, const int &row);
+    void removeItem(const string &fileToRemove, const int &row);
+    void removeFile(const int &row, const string &fileToRemove);
+    void removeDirectory(const int &row, const string &fileToRemove);
     void updateDirectory();
     void appendDirectory(const string &directory);
     string directory();
