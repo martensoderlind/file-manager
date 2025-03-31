@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/marten/Documents/Programmering/file-manager
+CMAKE_SOURCE_DIR = /home/marten/Documents/Programmering/file-manager/file-manager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/marten/Documents/Programmering/file-manager/build
+CMAKE_BINARY_DIR = /home/marten/Documents/Programmering/file-manager/file-manager/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/file_manager.dir/depend.make
@@ -70,46 +70,46 @@ include CMakeFiles/file_manager.dir/progress.make
 include CMakeFiles/file_manager.dir/flags.make
 
 CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: CMakeFiles/file_manager.dir/flags.make
-CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.cpp
+CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: /home/marten/Documents/Programmering/file-manager/file-manager/src/filemanager/filemanager.cpp
 CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: CMakeFiles/file_manager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marten/Documents/Programmering/file-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o -MF CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o.d -o CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o -c /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marten/Documents/Programmering/file-manager/file-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o -MF CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o.d -o CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o -c /home/marten/Documents/Programmering/file-manager/file-manager/src/filemanager/filemanager.cpp
 
 CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.cpp > CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marten/Documents/Programmering/file-manager/file-manager/src/filemanager/filemanager.cpp > CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.i
 
 CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.cpp -o CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marten/Documents/Programmering/file-manager/file-manager/src/filemanager/filemanager.cpp -o CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.s
 
 CMakeFiles/file_manager.dir/src/main.cpp.o: CMakeFiles/file_manager.dir/flags.make
-CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering/file-manager/src/main.cpp
+CMakeFiles/file_manager.dir/src/main.cpp.o: /home/marten/Documents/Programmering/file-manager/file-manager/src/main.cpp
 CMakeFiles/file_manager.dir/src/main.cpp.o: CMakeFiles/file_manager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marten/Documents/Programmering/file-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/file_manager.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/file_manager.dir/src/main.cpp.o -MF CMakeFiles/file_manager.dir/src/main.cpp.o.d -o CMakeFiles/file_manager.dir/src/main.cpp.o -c /home/marten/Documents/Programmering/file-manager/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marten/Documents/Programmering/file-manager/file-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/file_manager.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/file_manager.dir/src/main.cpp.o -MF CMakeFiles/file_manager.dir/src/main.cpp.o.d -o CMakeFiles/file_manager.dir/src/main.cpp.o -c /home/marten/Documents/Programmering/file-manager/file-manager/src/main.cpp
 
 CMakeFiles/file_manager.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/file_manager.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marten/Documents/Programmering/file-manager/src/main.cpp > CMakeFiles/file_manager.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marten/Documents/Programmering/file-manager/file-manager/src/main.cpp > CMakeFiles/file_manager.dir/src/main.cpp.i
 
 CMakeFiles/file_manager.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/file_manager.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marten/Documents/Programmering/file-manager/src/main.cpp -o CMakeFiles/file_manager.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marten/Documents/Programmering/file-manager/file-manager/src/main.cpp -o CMakeFiles/file_manager.dir/src/main.cpp.s
 
 CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: CMakeFiles/file_manager.dir/flags.make
-CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programmering/file-manager/src/menu/menu.cpp
+CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: /home/marten/Documents/Programmering/file-manager/file-manager/src/menu/menu.cpp
 CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: CMakeFiles/file_manager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marten/Documents/Programmering/file-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/file_manager.dir/src/menu/menu.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/file_manager.dir/src/menu/menu.cpp.o -MF CMakeFiles/file_manager.dir/src/menu/menu.cpp.o.d -o CMakeFiles/file_manager.dir/src/menu/menu.cpp.o -c /home/marten/Documents/Programmering/file-manager/src/menu/menu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marten/Documents/Programmering/file-manager/file-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/file_manager.dir/src/menu/menu.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/file_manager.dir/src/menu/menu.cpp.o -MF CMakeFiles/file_manager.dir/src/menu/menu.cpp.o.d -o CMakeFiles/file_manager.dir/src/menu/menu.cpp.o -c /home/marten/Documents/Programmering/file-manager/file-manager/src/menu/menu.cpp
 
 CMakeFiles/file_manager.dir/src/menu/menu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/file_manager.dir/src/menu/menu.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marten/Documents/Programmering/file-manager/src/menu/menu.cpp > CMakeFiles/file_manager.dir/src/menu/menu.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marten/Documents/Programmering/file-manager/file-manager/src/menu/menu.cpp > CMakeFiles/file_manager.dir/src/menu/menu.cpp.i
 
 CMakeFiles/file_manager.dir/src/menu/menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/file_manager.dir/src/menu/menu.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marten/Documents/Programmering/file-manager/src/menu/menu.cpp -o CMakeFiles/file_manager.dir/src/menu/menu.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marten/Documents/Programmering/file-manager/file-manager/src/menu/menu.cpp -o CMakeFiles/file_manager.dir/src/menu/menu.cpp.s
 
 # Object files for target file_manager
 file_manager_OBJECTS = \
@@ -127,7 +127,7 @@ file_manager: CMakeFiles/file_manager.dir/build.make
 file_manager: /usr/lib/x86_64-linux-gnu/libcurses.so
 file_manager: /usr/lib/x86_64-linux-gnu/libform.so
 file_manager: CMakeFiles/file_manager.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/marten/Documents/Programmering/file-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable file_manager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/marten/Documents/Programmering/file-manager/file-manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable file_manager"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/file_manager.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -139,6 +139,6 @@ CMakeFiles/file_manager.dir/clean:
 .PHONY : CMakeFiles/file_manager.dir/clean
 
 CMakeFiles/file_manager.dir/depend:
-	cd /home/marten/Documents/Programmering/file-manager/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marten/Documents/Programmering/file-manager /home/marten/Documents/Programmering/file-manager /home/marten/Documents/Programmering/file-manager/build /home/marten/Documents/Programmering/file-manager/build /home/marten/Documents/Programmering/file-manager/build/CMakeFiles/file_manager.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/marten/Documents/Programmering/file-manager/file-manager/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marten/Documents/Programmering/file-manager/file-manager /home/marten/Documents/Programmering/file-manager/file-manager /home/marten/Documents/Programmering/file-manager/file-manager/build /home/marten/Documents/Programmering/file-manager/file-manager/build /home/marten/Documents/Programmering/file-manager/file-manager/build/CMakeFiles/file_manager.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/file_manager.dir/depend
 

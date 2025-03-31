@@ -1,7 +1,7 @@
 CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: \
- /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.cpp \
+ /home/marten/Documents/Programmering/file-manager/file-manager/src/filemanager/filemanager.cpp \
  /usr/include/stdc-predef.h \
- /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.h \
+ /home/marten/Documents/Programmering/file-manager/file-manager/src/filemanager/filemanager.h \
  /usr/include/c++/13/filesystem \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -184,6 +184,6 @@ CMakeFiles/file_manager.dir/src/filemanager/filemanager.cpp.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/marten/Documents/Programmering/file-manager/src/types.h \
+ /home/marten/Documents/Programmering/file-manager/file-manager/src/types.h \
  /usr/include/c++/13/iostream /usr/include/curses.h \
  /usr/include/ncurses_dll.h /usr/include/unctrl.h /usr/include/curses.h

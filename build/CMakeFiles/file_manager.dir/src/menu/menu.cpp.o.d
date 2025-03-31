@@ -1,5 +1,5 @@
 CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: \
- /home/marten/Documents/Programmering/file-manager/src/menu/menu.cpp \
+ /home/marten/Documents/Programmering/file-manager/file-manager/src/menu/menu.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -159,9 +159,9 @@ CMakeFiles/file_manager.dir/src/menu/menu.cpp.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/marten/Documents/Programmering/file-manager/src/menu/menu.h \
- /home/marten/Documents/Programmering/file-manager/src/types.h \
- /home/marten/Documents/Programmering/file-manager/src/filemanager/filemanager.h \
+ /home/marten/Documents/Programmering/file-manager/file-manager/src/menu/menu.h \
+ /home/marten/Documents/Programmering/file-manager/file-manager/src/types.h \
+ /home/marten/Documents/Programmering/file-manager/file-manager/src/filemanager/filemanager.h \
  /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
  /usr/include/c++/13/cstdint /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/limits \

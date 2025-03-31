@@ -175,7 +175,7 @@ void Menu::handelFileMenu(const int &option, const int &row)
         mvprintw(row + 1, 2, "Name of file: ");
         refresh();
         getnstr(input, sizeof(input) - 1);
-        fileManager.removeFile(input);
+        fileManager.removeFile(input, row + 2);
         break;
     case 3:
         mvprintw(row + 1, 2, "Name of file: ");

@@ -21,7 +21,7 @@ public:
     vector<DirectoryEntry> filesInCurrentDirectory();
     void createDirectory(const string &newDirectory, const int &row);
     void createFile(const string &newFile, const int &row);
-    bool removeFile(const string &fileToRemove);
+    bool removeFile(const string &fileToRemove, const int &row);
     void updateDirectory();
     void appendDirectory(const string &directory);
     string directory();
