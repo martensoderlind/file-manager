@@ -51,12 +51,9 @@ bool Menu::handleKeyInput(int key, int &choice, int num_options, bool &run)
     case KEY_DOWN:
         choice = (choice + 1) % num_options;
         return false;
-
         break;
     case '\n':
         run = false;
-
-        endwin();
         return true;
     default:
         return false;
