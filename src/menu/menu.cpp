@@ -152,43 +152,41 @@ int Menu::fileMenu(const int &row)
     }
     return -1;
 }
+string Menu::fileNameInput(const int row, const string message)
+{
+    char input[10] = {0};
+    mvprintw(row + 1, 2, "%s", message.c_str());
+    refresh();
+    getnstr(input, sizeof(input) - 1);
+    return input;
+}
 void Menu::handelFileMenu(const int &option, const int &row)
 {
     echo();
-    char input[10] = {0};
+    string input;
     switch (option)
     {
     case 0:
-        mvprintw(row + 1, 2, "Name of file: ");
-        refresh();
-        getnstr(input, sizeof(input) - 1);
+        input = fileNameInput(row, "Name of file: ");
+
         fileManager.createFile(input, row + 2);
         break;
     case 1:
-        mvprintw(row + 1, 2, "Name of directory: ");
-        refresh();
-        getnstr(input, sizeof(input) - 1);
-
+        input = fileNameInput(row, "Name of directory: ");
         fileManager.createDirectory(input, row + 2);
         break;
     case 2:
-        mvprintw(row + 1, 2, "Name of file: ");
-        refresh();
-        getnstr(input, sizeof(input) - 1);
+        input = fileNameInput(row, "Name of file: ");
         fileManager.removeFile(input, row + 2);
         break;
     case 3:
-        mvprintw(row + 1, 2, "Name of file: ");
-        refresh();
-        getnstr(input, sizeof(input) - 1);
+        input = fileNameInput(row, "Name of file: ");
         fileManager.setCopyFrom(input);
         break;
     case 4:
         if (!fileManager.CopyFromEmpty())
         {
-            mvprintw(row + 2, 2, "Name the new file: ");
-            refresh();
-            getnstr(input, sizeof(input) - 1);
+            fileNameInput(row + 1, "Name the new file: ");
             fileManager.setCopyTo(input);
             fileManager.copy();
         }
