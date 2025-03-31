@@ -6,9 +6,6 @@ using namespace std;
 enum MenuState
 {
     DISPLAY,
-    ADD_FILE,
-    ADD_DIR,
-    REMOVE,
     EXIT
 };
 struct DirectoryEntry
