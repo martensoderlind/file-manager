@@ -1,19 +1,14 @@
 #include <iostream>
 #include <ncurses.h>
+#include <vector>
 #include "menu.h"
-#include <ncurses.h>
 #include "types.h"
 
-int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
+void Menu::initializeMenuOptions(vector<string> &options,
+                                 vector<string> &type,
+                                 vector<size_t> &size,
+                                 const vector<DirectoryEntry> &entries)
 {
-    int choice = 0;
-    int key;
-    bool run = true;
-    string currentDirectory = fileManager.directory();
-    vector<string> options;
-    vector<string> type;
-    vector<size_t> size;
-
     options.push_back("[Exit]");
     type.push_back("action");
     size.push_back(0);
@@ -32,7 +27,24 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
         type.push_back(entry.type);
         size.push_back(entry.size);
     }
+}
 
+int Menu::displayMenu(const vector<DirectoryEntry> &entries)
+{
+    int choice = 0;
+    int key;
+    bool run = true;
+
+    const int nameCol = 2;
+    const int typeCol = 40;
+    const int sizeCol = 55;
+
+    string currentDirectory = fileManager.directory();
+    vector<string> options;
+    vector<string> type;
+    vector<size_t> size;
+
+    initializeMenuOptions(options, type, size, entries);
     int num_options = options.size();
     int num_type = type.size();
     int num_size = size.size();
@@ -42,9 +54,9 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
         clear();
         mvprintw(1, 2, "=====FILE MANAGER=====");
         mvprintw(2, 2, "%s", currentDirectory.c_str());
-        mvprintw(3, 2, "Name");
-        mvprintw(3, 40, "Type");
-        mvprintw(3, 55, "Size");
+        mvprintw(3, nameCol, "Name");
+        mvprintw(3, typeCol, "Type");
+        mvprintw(3, sizeCol, "Size");
         mvprintw(4, 1, "-----------------------------------------------------------");
 
         for (int i = 0; i < num_options; i++)
@@ -56,9 +68,9 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
 
             if (type[i] == "file")
             {
-                mvprintw(i + 5, 2, "%s", options[i].c_str());
-                mvprintw(i + 5, 40, "%s", type[i].c_str());
-                mvprintw(i + 5, 55, "%zu", size[i]);
+                mvprintw(i + 5, nameCol, "%s", options[i].c_str());
+                mvprintw(i + 5, typeCol, "%s", type[i].c_str());
+                mvprintw(i + 5, sizeCol, "%zu", size[i]);
             }
             else
             {
@@ -137,7 +149,6 @@ int Menu::fileMenu(const int &row)
 void Menu::handelFileMenu(const int &option, const int &row)
 {
     echo();
-
     char input[10] = {0};
     switch (option)
     {

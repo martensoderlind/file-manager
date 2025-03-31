@@ -16,6 +16,10 @@ public:
     int fileMenu(const int &row);
     int renderMenu();
     void handelFileMenu(const int &option, const int &row);
+    void initializeMenuOptions(vector<string> &options,
+                               vector<string> &type,
+                               vector<size_t> &size,
+                               const vector<DirectoryEntry> &entries);
 };
 
 #endif
