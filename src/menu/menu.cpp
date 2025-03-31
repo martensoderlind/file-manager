@@ -122,7 +122,7 @@ int Menu::fileMenu(const int &row)
     int choice = 0;
     int key;
     bool run = true;
-    vector<string> options = {"Add file", "Add directory", "Delete file", "Copy", "Exit"};
+    vector<string> options = {"Add file", "Add directory", "Delete file/directory", "Copy", "Exit"};
     bool pasteEmpty = fileManager.CopyFromEmpty();
     if (!pasteEmpty)
     {
@@ -168,7 +168,6 @@ void Menu::handelFileMenu(const int &option, const int &row)
     {
     case 0:
         input = fileNameInput(row, "Name of file: ");
-
         fileManager.createFile(input, row + 2);
         break;
     case 1:
