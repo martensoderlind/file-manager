@@ -19,6 +19,7 @@ public:
     FileManager(string initialPath);
 
     vector<DirectoryEntry> filesInCurrentDirectory();
+    void statusMessage(const int row, const string message, const int delay);
     void createDirectory(const string &newDirectory, const int &row);
     void createFile(const string &newFile, const int &row);
     bool removeFile(const string &fileToRemove, const int &row);

@@ -12,6 +12,13 @@ using namespace std;
 FileManager::FileManager() {};
 FileManager::FileManager(string initialPath) : currentDirectory(initialPath) {};
 
+void FileManager::statusMessage(const int row, const string message, const int delay)
+{
+    mvprintw(row, 2, "%s", message.c_str());
+    refresh();
+    napms(delay);
+}
+
 vector<DirectoryEntry> FileManager::filesInCurrentDirectory()
 {
     vector<DirectoryEntry> entries;
@@ -57,23 +64,17 @@ void FileManager::createDirectory(const string &newDirectory, const int &row)
 {
     if (filesystem::exists(currentDirectory + "/" + newDirectory))
     {
-        mvprintw(row, 2, "A directory with that name already exist.");
-        refresh();
-        napms(2000);
+        statusMessage(row, "A directory with that name already exist.", 2000);
     }
     else
     {
         if (filesystem::create_directory(currentDirectory + "/" + newDirectory))
         {
-            mvprintw(row, 2, "Directory %s created successfully!", newDirectory.c_str());
-            refresh();
-            napms(1500);
+            statusMessage(row, "Directory created successfully!", 1500);
         }
         else
         {
-            mvprintw(row, 2, "Failed to create directory.");
-            refresh();
-            napms(2000);
+            statusMessage(row, "Failed to create directory.", 2000);
         }
     }
     move(row, 0);
@@ -84,9 +85,7 @@ void FileManager::createFile(const string &newFile, const int &row)
 {
     if (filesystem::exists(currentDirectory + "/" + newFile))
     {
-        mvprintw(row, 2, "A file with that name already exist.");
-        refresh();
-        napms(2000);
+        statusMessage(row, "A file with that name already exist.", 2000);
     }
     else
     {
@@ -95,20 +94,14 @@ void FileManager::createFile(const string &newFile, const int &row)
             ofstream file(currentDirectory + "/" + newFile);
             if (!file)
             {
-                mvprintw(row, 2, "Could not find file.");
-                refresh();
-                napms(2000);
+                statusMessage(row, "Could not find file.", 2000);
             }
             file.close();
-            mvprintw(row, 2, "File created.");
-            refresh();
-            napms(1500);
+            statusMessage(row, "File created", 1500);
         }
         catch (const exception &e)
         {
-            mvprintw(row, 2, "Error while creating file.");
-            refresh();
-            napms(2000);
+            statusMessage(row, "Error while creating file.", 2000);
         }
     }
     move(row, 0);
@@ -117,11 +110,14 @@ void FileManager::createFile(const string &newFile, const int &row)
 };
 bool FileManager::removeFile(const string &fileToRemove, const int &row)
 {
+    if (fileToRemove.empty())
+    {
+        statusMessage(row, "Please enter the name of the file/directory that you want to remove.", 3000);
+        return false;
+    }
     if (!filesystem::exists(currentDirectory + "/" + fileToRemove))
     {
-        mvprintw(row, 2, "No file with that name exist.");
-        refresh();
-        napms(2000);
+        statusMessage(row, "No file with that name exist.", 2000);
         return false;
     }
     if (filesystem::is_regular_file(currentDirectory + "/" + fileToRemove))
@@ -131,22 +127,18 @@ bool FileManager::removeFile(const string &fileToRemove, const int &row)
             uintmax_t removed = filesystem::remove(currentDirectory + "/" + fileToRemove);
             if (removed > 0)
             {
-                mvprintw(row, 2, "File removed successfully.");
-                refresh();
-                napms(2000);
+                statusMessage(row, "File removed successfully.", 1500);
                 return true;
             }
             else
             {
-                mvprintw(row, 2, "Could not remove file.");
-                refresh();
-                napms(2000);
+                statusMessage(row, "Could not remove file.", 2000);
                 return false;
             }
         }
         catch (const exception &e)
         {
-            mvprintw(row, 2, "Error while deleting file.");
+            mvprintw(row, 2, "Error while deleting file: %s", e.what());
             refresh();
             napms(2000);
             return false;
@@ -159,22 +151,18 @@ bool FileManager::removeFile(const string &fileToRemove, const int &row)
             uintmax_t removed = filesystem::remove_all(currentDirectory + "/" + fileToRemove);
             if (removed > 0)
             {
-                mvprintw(row, 2, "Directory removed successfully.");
-                refresh();
-                napms(2000);
+                statusMessage(row, "Directory removed successfully.", 2000);
                 return true;
             }
             else
             {
-                mvprintw(row, 2, "Could not remove directory.");
-                refresh();
-                napms(2000);
+                statusMessage(row, "Could not remove directory.", 2000);
                 return false;
             }
         }
         catch (const exception &e)
         {
-            mvprintw(row, 2, "Error while deleting directory.");
+            mvprintw(row, 2, "Error while deleting directory: %s", e.what());
             refresh();
             napms(2000);
             return false;
