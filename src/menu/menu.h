@@ -21,7 +21,7 @@ public:
                                vector<string> &type,
                                vector<size_t> &size,
                                const vector<DirectoryEntry> &entries);
-    void drawMenuHeader(const string &currentDirectory);
+    void drawMenuHeader();
     string fileNameInput(const int row, const string message);
 };
 

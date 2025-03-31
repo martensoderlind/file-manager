@@ -29,14 +29,16 @@ void Menu::initializeMenuOptions(vector<string> &options,
     }
 }
 
-void Menu::drawMenuHeader(const string &currentDirectory)
+void Menu::drawMenuHeader()
 {
+    string currentDirectory = fileManager.directory();
+
     clear();
     mvprintw(1, 2, "=====FILE MANAGER=====");
     mvprintw(2, 2, "%s", currentDirectory.c_str());
     mvprintw(3, 2, "Name");
     mvprintw(3, 40, "Type");
-    mvprintw(3, 55, "Size");
+    mvprintw(3, 55, "Size [B]");
     mvprintw(4, 1, "-----------------------------------------------------------");
 }
 
@@ -78,7 +80,6 @@ int Menu::displayMenu(const vector<DirectoryEntry> &entries)
     const int typeColumn = 40;
     const int sizeColumn = 55;
 
-    string currentDirectory = fileManager.directory();
     vector<string> options;
     vector<string> type;
     vector<size_t> size;
@@ -90,7 +91,7 @@ int Menu::displayMenu(const vector<DirectoryEntry> &entries)
 
     while (run)
     {
-        drawMenuHeader(currentDirectory);
+        drawMenuHeader();
         for (int i = 0; i < num_options; i++)
         {
             if (i == choice)
@@ -112,7 +113,6 @@ int Menu::displayMenu(const vector<DirectoryEntry> &entries)
 
             attroff(A_REVERSE);
         }
-
         refresh();
 
         key = getch();
