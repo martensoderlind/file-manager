@@ -30,32 +30,24 @@ vector<DirectoryEntry> FileManager::filesInCurrentDirectory()
 
     for (const auto &entry : filesystem::directory_iterator(currentDirectory))
     {
-        try
-        {
-            DirectoryEntry dirEntry;
-            dirEntry.name = entry.path().filename().string();
+        DirectoryEntry dirEntry;
+        dirEntry.name = entry.path().filename().string();
 
-            if (filesystem::is_directory(entry.status()))
-            {
-                dirEntry.type = "directory";
-            }
-            else if (filesystem::is_regular_file(entry.status()))
-            {
-                dirEntry.type = "file";
-                dirEntry.size = filesystem::file_size(entry.path());
-            }
-            else
-            {
-                dirEntry.type = "other";
-                dirEntry.size = 0;
-            }
-
-            entries.push_back(dirEntry);
-        }
-        catch (const std::exception &e)
+        if (filesystem::is_directory(entry.status()))
         {
-            continue;
+            dirEntry.type = "directory";
         }
+        else if (filesystem::is_regular_file(entry.status()))
+        {
+            dirEntry.type = "file";
+            dirEntry.size = filesystem::file_size(entry.path());
+        }
+        else
+        {
+            dirEntry.type = "other";
+            dirEntry.size = 0;
+        }
+        entries.push_back(dirEntry);
     }
 
     return entries;
