@@ -106,7 +106,6 @@ void FileManager::createFile(const string &newFile, const int &row)
         }
         catch (const exception &e)
         {
-            cerr << "Error while creating file: " << e.what() << '\n';
             mvprintw(row, 2, "Error while creating file.");
             refresh();
             napms(2000);
