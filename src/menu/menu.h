@@ -11,7 +11,7 @@ private:
     FileManager fileManager;
 
 public:
-    Menu() : menuState(MAIN) {};
+    Menu() : menuState(DISPLAY) {};
     int mainMenu();
     int displayMenu(const std::vector<DirectoryEntry> &entries);
     int fileMenu(const int &row);

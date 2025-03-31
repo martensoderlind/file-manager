@@ -5,7 +5,6 @@ using namespace std;
 
 enum MenuState
 {
-    MAIN,
     DISPLAY,
     ADD_FILE,
     ADD_DIR,

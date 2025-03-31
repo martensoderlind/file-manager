@@ -28,45 +28,45 @@ void Menu::stateChange(const int &option)
         break;
     }
 }
-int Menu::mainMenu()
-{
-    int choice = 0;
-    int key;
-    bool run = true;
-    const char *options[] = {"List files", "Create file", "Create directory", "Delete File", "Exit"};
-    int num_options = sizeof(options) / sizeof(options[0]);
+// int Menu::mainMenu()
+// {
+//     int choice = 0;
+//     int key;
+//     bool run = true;
+//     const char *options[] = {"List files", "Create file", "Create directory", "Delete File", "Exit"};
+//     int num_options = sizeof(options) / sizeof(options[0]);
 
-    while (run)
-    {
-        for (int i = 0; i < num_options; i++)
-        {
-            if (i == choice)
-            {
-                attron(A_REVERSE);
-            }
-            mvprintw(i + 2, 2, "%s", options[i]);
-            attroff(A_REVERSE);
-        }
-        mvprintw(1, 2, "=====FILE MANAGER=====");
-        refresh();
-        key = getch();
+//     while (run)
+//     {
+//         for (int i = 0; i < num_options; i++)
+//         {
+//             if (i == choice)
+//             {
+//                 attron(A_REVERSE);
+//             }
+//             mvprintw(i + 2, 2, "%s", options[i]);
+//             attroff(A_REVERSE);
+//         }
+//         mvprintw(1, 2, "=====FILE MANAGER=====");
+//         refresh();
+//         key = getch();
 
-        switch (key)
-        {
-        case KEY_UP:
-            choice = (choice - 1 + num_options) % num_options;
-            break;
-        case KEY_DOWN:
-            choice = (choice + 1) % num_options;
-            break;
-        case '\n':
-            run = false;
-            endwin();
-            return choice;
-        }
-    }
-    return -1;
-}
+//         switch (key)
+//         {
+//         case KEY_UP:
+//             choice = (choice - 1 + num_options) % num_options;
+//             break;
+//         case KEY_DOWN:
+//             choice = (choice + 1) % num_options;
+//             break;
+//         case '\n':
+//             run = false;
+//             endwin();
+//             return choice;
+//         }
+//     }
+//     return -1;
+// }
 int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
 {
     int choice = 0;
@@ -151,6 +151,7 @@ int Menu::displayMenu(const std::vector<DirectoryEntry> &entries)
 
     return -1;
 }
+
 int Menu::fileMenu(const int &row)
 {
     int choice = 0;
@@ -172,7 +173,7 @@ int Menu::fileMenu(const int &row)
             {
                 attron(A_REVERSE);
             }
-            mvprintw(i + row + 8, 2, "%s", options[i].c_str());
+            mvprintw(i + row + 9, 2, "%s", options[i].c_str());
             attroff(A_REVERSE);
         }
         mvprintw(row + 8, 1, "-----------------------------------------------------------");
@@ -250,18 +251,14 @@ int Menu::renderMenu()
     vector<DirectoryEntry> files;
     switch (menuState)
     {
-    case MAIN:
-        option = mainMenu();
-        stateChange(option);
-        return 0;
-        break;
     case DISPLAY:
         files = fileManager.filesInCurrentDirectory();
         displayOption = displayMenu(files);
+
         if (displayOption == 0)
         {
             clear();
-            menuState = MAIN;
+            menuState = EXIT;
         }
         else if (displayOption == 1)
         {
@@ -279,15 +276,6 @@ int Menu::renderMenu()
                 fileManager.appendDirectory(files[displayOption - 3].name);
             }
         }
-        return 0;
-        break;
-    case ADD_FILE:
-        return 0;
-        break;
-    case ADD_DIR:
-        return 0;
-        break;
-    case REMOVE:
         return 0;
         break;
     case EXIT:
