@@ -131,9 +131,11 @@ int Menu::fileMenu(const int &row)
     int choice = 0;
     int key;
     bool run = true;
+
     vector<string> options = {"Add file", "Add directory", "Delete file/directory", "Copy", "Exit"};
-    bool pasteEmpty = fileManager.CopyFromEmpty();
-    if (!pasteEmpty)
+    bool copyEmpty = fileManager.CopyFromEmpty();
+
+    if (!copyEmpty)
     {
         options.insert(options.end() - 1, "Paste");
     }
