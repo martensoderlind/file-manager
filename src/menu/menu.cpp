@@ -147,17 +147,8 @@ int Menu::fileMenu(const int &row)
         mvprintw(row + 8, 1, "-----------------------------------------------------------");
         refresh();
         key = getch();
-
-        switch (key)
+        if (handleKeyInput(key, choice, num_options, run))
         {
-        case KEY_UP:
-            choice = (choice - 1 + num_options) % num_options;
-            break;
-        case KEY_DOWN:
-            choice = (choice + 1) % num_options;
-            break;
-        case '\n':
-            run = false;
             endwin();
             return choice;
         }
