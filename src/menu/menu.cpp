@@ -59,6 +59,15 @@ bool Menu::handleKeyInput(int key, int &choice, int num_options, bool &run)
         return false;
     }
 }
+string Menu::fileNameInput(const int row, const string message)
+{
+    char input[10] = {0};
+    mvprintw(row + 4, 2, "%s", message.c_str());
+    refresh();
+    getnstr(input, sizeof(input) - 1);
+    return input;
+}
+
 int Menu::displayMenu(const vector<DirectoryEntry> &entries)
 {
     int choice = 0;
@@ -152,14 +161,7 @@ int Menu::fileMenu(const int &row)
     }
     return -1;
 }
-string Menu::fileNameInput(const int row, const string message)
-{
-    char input[10] = {0};
-    mvprintw(row + 4, 2, "%s", message.c_str());
-    refresh();
-    getnstr(input, sizeof(input) - 1);
-    return input;
-}
+
 void Menu::handelFileMenu(const int &option, const int &row)
 {
     echo();
@@ -167,7 +169,7 @@ void Menu::handelFileMenu(const int &option, const int &row)
     switch (option)
     {
     case 0:
-        input = fileNameInput(row, "Name of file: ");
+        input = fileNameInput(row, "Name of the file: ");
         fileManager.createFile(input, row + 2);
         break;
     case 1:
@@ -175,11 +177,11 @@ void Menu::handelFileMenu(const int &option, const int &row)
         fileManager.createDirectory(input, row + 2);
         break;
     case 2:
-        input = fileNameInput(row, "Name of file: ");
+        input = fileNameInput(row, "Name of the file: ");
         fileManager.removeFile(input, row + 2);
         break;
     case 3:
-        input = fileNameInput(row, "Name of file: ");
+        input = fileNameInput(row, "Name of the file: ");
         fileManager.setCopyFrom(input);
         break;
     case 4:
