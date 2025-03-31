@@ -39,6 +39,29 @@ void Menu::drawMenuHeader(const string &currentDirectory)
     mvprintw(3, 55, "Size");
     mvprintw(4, 1, "-----------------------------------------------------------");
 }
+
+bool Menu::handleKeyInput(int key, int &choice, int num_options, bool &run)
+{
+    switch (key)
+    {
+    case KEY_UP:
+        choice = (choice - 1 + num_options) % num_options;
+        return false;
+        break;
+    case KEY_DOWN:
+        choice = (choice + 1) % num_options;
+        return false;
+
+        break;
+    case '\n':
+        run = false;
+
+        endwin();
+        return true;
+    default:
+        return false;
+    }
+}
 int Menu::displayMenu(const vector<DirectoryEntry> &entries)
 {
     int choice = 0;
@@ -87,16 +110,8 @@ int Menu::displayMenu(const vector<DirectoryEntry> &entries)
         refresh();
 
         key = getch();
-        switch (key)
+        if (handleKeyInput(key, choice, num_options, run))
         {
-        case KEY_UP:
-            choice = (choice - 1 + num_options) % num_options;
-            break;
-        case KEY_DOWN:
-            choice = (choice + 1) % num_options;
-            break;
-        case '\n':
-            run = false;
             endwin();
             return choice;
         }

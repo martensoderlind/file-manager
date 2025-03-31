@@ -16,6 +16,7 @@ public:
     int fileMenu(const int &row);
     int renderMenu();
     void handelFileMenu(const int &option, const int &row);
+    bool handleKeyInput(int key, int &choice, int num_options, bool &run);
     void initializeMenuOptions(vector<string> &options,
                                vector<string> &type,
                                vector<size_t> &size,
