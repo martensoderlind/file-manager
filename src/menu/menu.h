@@ -20,6 +20,7 @@ public:
                                vector<string> &type,
                                vector<size_t> &size,
                                const vector<DirectoryEntry> &entries);
+    void drawMenuHeader(const string &currentDirectory);
 };
 
 #endif

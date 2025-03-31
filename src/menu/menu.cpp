@@ -29,6 +29,16 @@ void Menu::initializeMenuOptions(vector<string> &options,
     }
 }
 
+void Menu::drawMenuHeader(const string &currentDirectory)
+{
+    clear();
+    mvprintw(1, 2, "=====FILE MANAGER=====");
+    mvprintw(2, 2, "%s", currentDirectory.c_str());
+    mvprintw(3, 2, "Name");
+    mvprintw(3, 40, "Type");
+    mvprintw(3, 55, "Size");
+    mvprintw(4, 1, "-----------------------------------------------------------");
+}
 int Menu::displayMenu(const vector<DirectoryEntry> &entries)
 {
     int choice = 0;
@@ -51,14 +61,14 @@ int Menu::displayMenu(const vector<DirectoryEntry> &entries)
 
     while (run)
     {
-        clear();
-        mvprintw(1, 2, "=====FILE MANAGER=====");
-        mvprintw(2, 2, "%s", currentDirectory.c_str());
-        mvprintw(3, nameCol, "Name");
-        mvprintw(3, typeCol, "Type");
-        mvprintw(3, sizeCol, "Size");
-        mvprintw(4, 1, "-----------------------------------------------------------");
-
+        // clear();
+        // mvprintw(1, 2, "=====FILE MANAGER=====");
+        // mvprintw(2, 2, "%s", currentDirectory.c_str());
+        // mvprintw(3, nameCol, "Name");
+        // mvprintw(3, typeCol, "Type");
+        // mvprintw(3, sizeCol, "Size");
+        // mvprintw(4, 1, "-----------------------------------------------------------");
+        drawMenuHeader(currentDirectory);
         for (int i = 0; i < num_options; i++)
         {
             if (i == choice)
