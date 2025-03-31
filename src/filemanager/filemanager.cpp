@@ -49,7 +49,6 @@ vector<DirectoryEntry> FileManager::filesInCurrentDirectory()
         }
         entries.push_back(dirEntry);
     }
-
     return entries;
 }
 
@@ -59,17 +58,15 @@ void FileManager::createDirectory(const string &newDirectory, const int &row)
     {
         statusMessage(row, "A directory with that name already exist.", 2000);
     }
+    else if (filesystem::create_directory(currentDirectory + "/" + newDirectory))
+    {
+        statusMessage(row, "Directory created successfully!", 1500);
+    }
     else
     {
-        if (filesystem::create_directory(currentDirectory + "/" + newDirectory))
-        {
-            statusMessage(row, "Directory created successfully!", 1500);
-        }
-        else
-        {
-            statusMessage(row, "Failed to create directory.", 2000);
-        }
+        statusMessage(row, "Failed to create directory.", 2000);
     }
+
     move(row, 0);
     clrtoeol();
     refresh();
