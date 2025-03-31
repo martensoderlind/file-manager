@@ -71,7 +71,6 @@ void FileManager::createDirectory(const string &newDirectory, const int &row)
         }
         else
         {
-            cout << "failed to create directory." << endl;
             mvprintw(row, 2, "Failed to create directory.");
             refresh();
             napms(2000);
@@ -121,7 +120,6 @@ bool FileManager::removeFile(const string &fileToRemove, const int &row)
 {
     if (!filesystem::exists(currentDirectory + "/" + fileToRemove))
     {
-        cout << "No file with that name exist." << endl;
         mvprintw(row, 2, "No file with that name exist.");
         refresh();
         napms(2000);
