@@ -74,9 +74,9 @@ int Menu::displayMenu(const vector<DirectoryEntry> &entries)
     int key;
     bool run = true;
 
-    const int nameCol = 2;
-    const int typeCol = 40;
-    const int sizeCol = 55;
+    const int nameColumn = 2;
+    const int typeColumn = 40;
+    const int sizeColumn = 55;
 
     string currentDirectory = fileManager.directory();
     vector<string> options;
@@ -100,9 +100,9 @@ int Menu::displayMenu(const vector<DirectoryEntry> &entries)
 
             if (type[i] == "file")
             {
-                mvprintw(i + 5, nameCol, "%s", options[i].c_str());
-                mvprintw(i + 5, typeCol, "%s", type[i].c_str());
-                mvprintw(i + 5, sizeCol, "%zu", size[i]);
+                mvprintw(i + 5, nameColumn, "%s", options[i].c_str());
+                mvprintw(i + 5, typeColumn, "%s", type[i].c_str());
+                mvprintw(i + 5, sizeColumn, "%zu", size[i]);
             }
             else
             {
